@@ -8,9 +8,14 @@ export const createUserController = async (
   next: NextFunction
 ) => {
   try {
-    const { name, email, password }: typeUser = req.body;
+    const { name, email, password, permissions }: typeUser = req.body;
 
-    const token = await userService.createUser({ name, email, password });
+    const token = await userService.createUser({
+      name,
+      email,
+      password,
+      permissions,
+    });
 
     res.status(200).json({ token });
   } catch (error) {

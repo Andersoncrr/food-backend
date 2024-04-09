@@ -14,6 +14,10 @@ const userSchema = new Schema<typeUser>({
     type: String,
     require: true,
   },
+  permissions: {
+    type: [{ type: String, enum: ["admin"] }],
+    default: ["admin"],
+  },
 });
 
 export const User = mongoose.model("User", userSchema);

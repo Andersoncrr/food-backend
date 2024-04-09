@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import { router } from "@/routes";
 import { errorHandlerMiddleware } from "@/middlewares";
+import cors from "cors";
 
 dotenv.config();
 const app: Express = express();
@@ -15,6 +16,7 @@ app.listen(5001, () => {
 });
 
 app.use(express.json());
+app.use(cors());
 
 app.use("/api", router);
 app.use(errorHandlerMiddleware);
