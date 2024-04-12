@@ -1,6 +1,6 @@
 import { userService } from "@/services/userService";
 import { NextFunction, Request, Response } from "express";
-import { typeUser } from "@/types/users";
+import { typeUser } from "@/types/user";
 
 export const createUserController = async (
   req: Request,

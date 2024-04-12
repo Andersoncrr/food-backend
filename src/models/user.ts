@@ -1,4 +1,4 @@
-import { typeUser } from "@/types/users";
+import { typeUser } from "@/types/user";
 import mongoose, { Schema } from "mongoose";
 
 const userSchema = new Schema<typeUser>({
