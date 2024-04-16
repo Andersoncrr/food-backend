@@ -1,5 +1,5 @@
 import { userRepository } from "@/repositories/userRepository";
-import { typeUser } from "@/types/users";
+import { typeUser } from "@/types/user";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
