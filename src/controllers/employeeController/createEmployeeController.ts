@@ -1,0 +1,22 @@
+import { employeeService } from "@/services/employeeService";
+import { NextFunction, Request, Response } from "express";
+
+export const createEmployeeController = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const { name, position, email, phone } = req.body;
+
+    const employee = await employeeService.createEmployee({
+      name,
+      email,
+      position,
+      phone,
+    });
+    res.status(200).json(employee);
+  } catch (error) {
+    next(error);
+  }
+};
