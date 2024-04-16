@@ -4,4 +4,4 @@ import { Router } from "express";
 export const employeeRoutes: Router = Router();
 
 employeeRoutes.route("/").post(employeeController.createEmployeeController);
-employeeRoutes.route("/allemployees").get(employeeController.getAllEmployees);
+employeeRoutes.route("/:idUser").get(employeeController.getAllEmployees);

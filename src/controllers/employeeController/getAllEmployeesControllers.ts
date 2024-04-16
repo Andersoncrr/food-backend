@@ -7,8 +7,8 @@ export const getAllEmployees = async (
   next: NextFunction
 ) => {
   try {
-    const { employees } = req.body;
-    const allEmployees = await employeeService.getAllEmployees();
+    const { idUser } = req.params
+    const allEmployees = await employeeService.getAllEmployees(idUser);
     res.status(200).json(allEmployees);
   } catch (error) {
     next(error);

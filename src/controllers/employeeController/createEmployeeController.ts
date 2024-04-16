@@ -7,13 +7,14 @@ export const createEmployeeController = async (
   next: NextFunction
 ) => {
   try {
-    const { name, position, email, phone } = req.body;
+    const { name, position, email, phone,idUser } = req.body;
 
     const employee = await employeeService.createEmployee({
       name,
       email,
       position,
       phone,
+      idUser
     });
     res.status(200).json(employee);
   } catch (error) {
