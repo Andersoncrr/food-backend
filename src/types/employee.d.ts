@@ -1,6 +1,7 @@
 import { Schema } from "mongoose";
 
 export interface typeEmployee {
+  _id?: Schema.Types.ObjectId;
   name: string;
   email: string;
   position: string;
