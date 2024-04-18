@@ -1,7 +1,7 @@
-import { createUser } from "./createUser";
-import { getUser } from "./getUser";
+import { createUserRepository } from './createUserRepository';
+import { getUserByEmailRepository } from './getUserByEmailRepository';
 
 export const userRepository = {
-  createUser,
-  getUser,
+    createUserRepository,
+    getUserByEmailRepository,
 };

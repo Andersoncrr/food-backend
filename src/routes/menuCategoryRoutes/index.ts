@@ -9,7 +9,7 @@ menuCategoryRoutes
 
 menuCategoryRoutes
     .route('/:idUser')
-    .get(menuCategoryController.getMenuCategoriesController);
+    .get(menuCategoryController.getAllMenuCategoriesController);
 
 menuCategoryRoutes
     .route('/:idMenuCategory')

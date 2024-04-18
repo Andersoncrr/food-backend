@@ -1,11 +1,11 @@
-import { createMenuCategory } from './createMenuCategory';
-import { getMenuCategory } from './getMenuCategory';
-import { updateMenuCategory } from './updateMenuCategory';
-import { getMenuCategories } from './getMenuCategories';
+import { createMenuCategoryRepository } from './createMenuCategoryRepository';
+import { getMenuCategoryByIdRepository } from './getMenuCategoryByIdRepository';
+import { updateMenuCategoryByIdRepository } from './updateMenuCategoryByIdRepository';
+import { getAllMenuCategoriesByIdUserRepository } from './getAllMenuCategoriesByIdUserRepository';
 
 export const menuCategoryRepository = {
-    createMenuCategory,
-    getMenuCategory,
-    updateMenuCategory,
-    getMenuCategories,
+    createMenuCategoryRepository,
+    getMenuCategoryByIdRepository,
+    updateMenuCategoryByIdRepository,
+    getAllMenuCategoriesByIdUserRepository,
 };

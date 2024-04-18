@@ -1,7 +1,7 @@
 import { menuCategoryService } from '@/services/menuCategoryService';
 import { NextFunction, Request, Response } from 'express';
 
-export const getMenuCategoriesController = async (
+export const getAllMenuCategoriesController = async (
     req: Request,
     res: Response,
     next: NextFunction,
@@ -9,7 +9,7 @@ export const getMenuCategoriesController = async (
     const { idUser } = req.params;
     try {
         const menuCategory =
-            await menuCategoryService.getMenuCategories(idUser);
+            await menuCategoryService.getAllMenuCategoriesService(idUser);
 
         res.status(200).json(menuCategory);
     } catch (error) {

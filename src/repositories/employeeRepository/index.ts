@@ -1,19 +1,13 @@
-import { getEmployee } from "./getEmployee";
-import { createEmployee } from "./createEmployee";
-import{getAllEmployees} from "./getAllEmployees"
-import {updateEmployee} from "./updateEmployee"
-import{getEmployeeById} from "./getEmployeeById"
-
-
-
+import { getEmployeeByEmailRepository } from './getEmployeeByEmailRepository';
+import { createEmployeeRepository } from './createEmployeeRepository';
+import { getAllEmployeesByIdUserRepository } from './getAllEmployeesByIdUserRepository';
+import { updateEmployeeByIdRepository } from './updateEmployeeByIdRepository';
+import { getEmployeeByIdRepository } from './getEmployeeByIdRepository';
 
 export const employeeRepository = {
-
-  getEmployee,
-  createEmployee,
-  getAllEmployees,
-  updateEmployee,
-  getEmployeeById
-
- 
+    getEmployeeByEmailRepository,
+    createEmployeeRepository,
+    getAllEmployeesByIdUserRepository,
+    updateEmployeeByIdRepository,
+    getEmployeeByIdRepository,
 };

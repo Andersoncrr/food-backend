@@ -1,11 +1,11 @@
-import { createEmployeeController } from "./createEmployeeController";
-import { getAllEmployees } from "./getAllEmployeesControllers";
-import {deleteEmployee} from "./deleteEmployeeController"
-import {updateEmployeeById} from "./updateEmployeeController"
+import { createEmployeeController } from './createEmployeeController';
+import { getAllEmployeesControllers } from './getAllEmployeesControllers';
+import { deleteEmployeeController } from './deleteEmployeeController';
+import { updateEmployeeController } from './updateEmployeeController';
 
 export const employeeController = {
-  createEmployeeController,
-  getAllEmployees,
-  deleteEmployee,
-  updateEmployeeById
+    createEmployeeController,
+    getAllEmployeesControllers,
+    deleteEmployeeController,
+    updateEmployeeController,
 };

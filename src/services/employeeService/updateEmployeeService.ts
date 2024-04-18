@@ -2,7 +2,7 @@ import { employeeRepository } from '@/repositories/employeeRepository';
 import { typeEmployee } from '@/types/employee';
 import { isValidObjectId } from 'mongoose';
 
-export const updateEmployee = async (
+export const updateEmployeeService = async (
     idEmployee: string,
     employeeData: typeEmployee,
 ) => {
@@ -16,7 +16,8 @@ export const updateEmployee = async (
         };
     }
 
-    const employee = await employeeRepository.getEmployeeById(idEmployee);
+    const employee =
+        await employeeRepository.getEmployeeByIdRepository(idEmployee);
 
     if (!employee) {
         throw {
@@ -33,7 +34,8 @@ export const updateEmployee = async (
     employee.phone = phone || employee.phone;
     employee.idUser = idUser || employee.idUser;
 
-    const newEmployee = await employeeRepository.updateEmployee(employee);
+    const newEmployee =
+        await employeeRepository.updateEmployeeByIdRepository(employee);
 
     return newEmployee;
 };

@@ -1,4 +1,4 @@
-import { createUser } from "./createUser";
-import { authUser } from "./authUser";
+import { createUserService } from './createUserService';
+import { authUserService } from './authUserService';
 
-export const userService = { createUser, authUser };
+export const userService = { createUserService, authUserService };
