@@ -1,8 +1,7 @@
 import { STATUS } from '@/const/status';
-import { typeMenuCategory } from '@/types/menuCategory';
 import mongoose, { Schema } from 'mongoose';
 
-const menuCategorySchema = new Schema<typeMenuCategory>({
+const menuProduct = new Schema({
     idUser: {
         type: Schema.Types.ObjectId,
         ref: 'User',
@@ -10,11 +9,16 @@ const menuCategorySchema = new Schema<typeMenuCategory>({
     },
     name: {
         type: String,
-        require: true,
     },
     description: {
         type: String,
-        require: true,
+    },
+    category: {
+        type: Schema.Types.ObjectId,
+        ref: 'menuCategory',
+    },
+    price: {
+        type: String,
     },
     status: {
         type: String,
@@ -23,4 +27,4 @@ const menuCategorySchema = new Schema<typeMenuCategory>({
     },
 });
 
-export const MenuCategory = mongoose.model('menuCategory', menuCategorySchema);
+export const MenuProduct = mongoose.model('MenuProduct', menuProduct);
