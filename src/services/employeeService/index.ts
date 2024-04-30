@@ -1,11 +1,11 @@
 import { createEmployeeService } from './createEmployeeService';
-import { getAllEmployeesService } from './getAllEmployeesService';
-import { deleteEmployeeService } from './deleteEmployeeService';
-import { updateEmployeeService } from './updateEmployeeService';
+import { getEmployeesByIdUserService } from './getEmployeesByIdUserService';
+import { deleteEmployeeByIdService } from './deleteEmployeeByIdService';
+import { updateEmployeeByIdService } from './updateEmployeeByIdService';
 
 export const employeeService = {
     createEmployeeService,
-    getAllEmployeesService,
-    deleteEmployeeService,
-    updateEmployeeService,
+    getEmployeesByIdUserService,
+    deleteEmployeeByIdService,
+    updateEmployeeByIdService,
 };

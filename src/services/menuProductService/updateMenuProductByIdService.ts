@@ -1,7 +1,7 @@
 import { menuProductsRepository } from '@/repositories/menuProductRepository';
 import { isValidObjectId } from 'mongoose';
 
-export const updateMenuProductService = async (
+export const updateMenuProductByIdService = async (
     { name, description, category, price, idUser },
     idMenuProduct,
 ) => {

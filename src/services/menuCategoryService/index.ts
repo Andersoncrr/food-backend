@@ -1,11 +1,11 @@
 import { createMenuCategoryService } from './createMenuCategoryService';
-import { updateMenuCategoryService } from './updateMenuCategoryService';
-import { deleteMenuCategoryService } from './deleteMenuCategoryService';
-import { getAllMenuCategoriesService } from './getAllMenuCategoriesService';
+import { updateMenuCategoryByIdService } from './updateMenuCategoryByIdService';
+import { deleteMenuCategoryByIdService } from './deleteMenuCategoryByIdService';
+import { getMenuCategoriesByIdUserService } from './getMenuCategoriesByIdUserService';
 
 export const menuCategoryService = {
     createMenuCategoryService,
-    updateMenuCategoryService,
-    deleteMenuCategoryService,
-    getAllMenuCategoriesService,
+    updateMenuCategoryByIdService,
+    deleteMenuCategoryByIdService,
+    getMenuCategoriesByIdUserService,
 };

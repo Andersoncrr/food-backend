@@ -1,7 +1,11 @@
 import { createToppingCategoryService } from './createToppingCategoryService';
-import { updateToppingCategoryService } from './updateToppingCategoryService';
+import { updateToppingCategoryByIdService } from './updateToppingCategoryByIdService';
+import { deleteMenuCategoryByIdService } from './deleteMenuCategoryByIdService';
+import { getToppingCategoriesByIdUserService } from './getToppingCategoriesByIdUserService';
 
 export const toppingCategoryService = {
     createToppingCategoryService,
-    updateToppingCategoryService,
+    updateToppingCategoryByIdService,
+    deleteMenuCategoryByIdService,
+    getToppingCategoriesByIdUserService,
 };

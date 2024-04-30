@@ -1,11 +1,11 @@
-import { getMenuProductsService } from './getMenuProductsService';
+import { getMenuProductsByIdUserService } from './getMenuProductsByIdUserService';
 import { createMenuProductService } from './createMenuProductService';
-import { updateMenuProductService } from './updateMenuProductService';
+import { updateMenuProductByIdService } from './updateMenuProductByIdService';
 import { deleteMenuProductByIdService } from './deleteMenuProductByIdService';
 
 export const MenuProductService = {
-    getMenuProductsService,
+    getMenuProductsByIdUserService,
     createMenuProductService,
-    updateMenuProductService,
+    updateMenuProductByIdService,
     deleteMenuProductByIdService,
 };

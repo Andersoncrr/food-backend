@@ -1,16 +1,16 @@
 import { employeeService } from '@/services/employeeService';
 import { NextFunction, Request, Response } from 'express';
 
-export const getAllEmployeesControllers = async (
+export const deleteEmployeeByIdController = async (
     req: Request,
     res: Response,
     next: NextFunction,
 ) => {
+    const { idEmployee } = req.params;
     try {
-        const { idUser } = req.params;
-        const allEmployees =
-            await employeeService.getAllEmployeesService(idUser);
-        res.status(200).json(allEmployees);
+        const employee =
+            await employeeService.deleteEmployeeByIdService(idEmployee);
+        res.status(200).json(employee);
     } catch (error) {
         next(error);
     }

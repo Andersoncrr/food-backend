@@ -1,7 +1,9 @@
 import { createToppingCategoryController } from './createToppingCategoryController';
-import { updateToppingCategoryController } from './updateToppingCategoryController';
+import { updateToppingCategoryByIdController } from './updateToppingCategoryByIdController';
+import { deleteToppingCategoryByIdController } from './deleteToppingCategoryByIdController';
 
 export const toppingCategoryController = {
     createToppingCategoryController,
-    updateToppingCategoryController,
+    updateToppingCategoryByIdController,
+    deleteToppingCategoryByIdController,
 };

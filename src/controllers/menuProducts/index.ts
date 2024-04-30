@@ -1,11 +1,11 @@
-import { getMenuProductsController } from './getMenuProductsController';
+import { getMenuProductsByIdUserController } from './getMenuProductsByIdUserController';
 import { createMenuProductController } from './createMenuProductController';
-import { updateMenuProductController } from './updateMenuProductController';
+import { updateMenuProductByIdController } from './updateMenuProductByIdController';
 import { deleteMenuProducByIdController } from './deleteMenuProductByIdController';
 
 export const menuProductsController = {
-    getMenuProductsController,
+    getMenuProductsByIdUserController,
     createMenuProductController,
-    updateMenuProductController,
+    updateMenuProductByIdController,
     deleteMenuProducByIdController,
 };

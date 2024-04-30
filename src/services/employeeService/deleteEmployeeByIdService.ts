@@ -1,13 +1,8 @@
+import { STATUS } from '@/const/status';
 import { employeeRepository } from '@/repositories/employeeRepository';
-import { typeEmployee } from '@/types/employee';
 import { isValidObjectId } from 'mongoose';
 
-export const updateEmployeeService = async (
-    idEmployee: string,
-    employeeData: typeEmployee,
-) => {
-    const { name, email, position, phone, idUser } = employeeData;
-
+export const deleteEmployeeByIdService = async (idEmployee: string) => {
     if (!isValidObjectId(idEmployee)) {
         throw {
             error: true,
@@ -24,16 +19,11 @@ export const updateEmployeeService = async (
             error: true,
             status: 404,
             message:
-                'No se encontró ningun empleado con  el ID de usuario proporcionado.',
+                'No se encontró ningun empleado con el ID de usuario proporcionado.',
         };
     }
 
-    employee.name = name || employee.name;
-    employee.email = email || employee.email;
-    employee.position = position || employee.position;
-    employee.phone = phone || employee.phone;
-    employee.idUser = idUser || employee.idUser;
-
+    employee.status = STATUS.DELETE;
     const newEmployee =
         await employeeRepository.updateEmployeeByIdRepository(employee);
 

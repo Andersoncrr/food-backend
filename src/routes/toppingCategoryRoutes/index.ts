@@ -9,4 +9,5 @@ toppingCategoryRoutes
 
 toppingCategoryRoutes
     .route('/:idToppingCategory')
-    .put(toppingCategoryController.updateToppingCategoryController);
+    .put(toppingCategoryController.updateToppingCategoryByIdController)
+    .delete(toppingCategoryController.deleteToppingCategoryByIdController);

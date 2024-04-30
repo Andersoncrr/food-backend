@@ -1,22 +1,16 @@
 import { menuCategoryService } from '@/services/menuCategoryService';
 import { NextFunction, Request, Response } from 'express';
 
-export const updateMenuCategoryController = async (
+export const deleteMenuCategoryByIdController = async (
     req: Request,
     res: Response,
     next: NextFunction,
 ) => {
-    const { name, description, idUser } = req.body;
     const { idMenuCategory } = req.params;
     try {
         const menuCategory =
-            await menuCategoryService.updateMenuCategoryService(
+            await menuCategoryService.deleteMenuCategoryByIdService(
                 idMenuCategory,
-                {
-                    name,
-                    description,
-                    idUser,
-                },
             );
 
         res.status(200).json(menuCategory);

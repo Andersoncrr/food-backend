@@ -2,7 +2,7 @@ import { toppingCategoryRepository } from '@/repositories/toppingCategoryReposit
 import { typeToppingCategory } from '@/types/toppingCategory';
 import { isValidObjectId } from 'mongoose';
 
-export const updateToppingCategoryService = async (
+export const updateToppingCategoryByIdService = async (
     idToppingCategory: string,
     toppingCategoryData: typeToppingCategory,
 ) => {

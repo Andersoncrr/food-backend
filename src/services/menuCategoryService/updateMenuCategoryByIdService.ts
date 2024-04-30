@@ -1,8 +1,12 @@
-import { STATUS } from '@/const/status';
 import { menuCategoryRepository } from '@/repositories/menuCategoryRepository';
+import { typeMenuCategory } from '@/types/menuCategory';
 import { isValidObjectId } from 'mongoose';
 
-export const deleteMenuCategoryService = async (idMenuCategory: string) => {
+export const updateMenuCategoryByIdService = async (
+    idMenuCategory: string,
+    menuCategoryData: typeMenuCategory,
+) => {
+    const { name, description } = menuCategoryData;
     if (!isValidObjectId(idMenuCategory)) {
         throw {
             error: true,
@@ -25,7 +29,8 @@ export const deleteMenuCategoryService = async (idMenuCategory: string) => {
         };
     }
 
-    menuCategory.status = STATUS.DELETE;
+    menuCategory.name = name || menuCategory.name;
+    menuCategory.description = description || menuCategory.description;
 
     const newMenuCategory =
         await menuCategoryRepository.updateMenuCategoryByIdRepository(

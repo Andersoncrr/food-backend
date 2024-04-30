@@ -1,7 +1,7 @@
 import { employeeRepository } from '@/repositories/employeeRepository';
 import { isValidObjectId } from 'mongoose';
 
-export const getAllEmployeesService = async (idUser: string) => {
+export const getEmployeesByIdUserService = async (idUser: string) => {
     if (!isValidObjectId(idUser)) {
         throw {
             error: true,
@@ -10,7 +10,7 @@ export const getAllEmployeesService = async (idUser: string) => {
         };
     }
     const allEmployee =
-        await employeeRepository.getAllEmployeesByIdUserRepository(idUser);
+        await employeeRepository.getEmployeesByIdUserRepository(idUser);
 
     return allEmployee;
 };

@@ -1,11 +1,11 @@
 import { createMenuCategoryController } from './createMenuCategoryController';
-import { updateMenuCategoryController } from './updateMenuCategoryController';
-import { deleteMenuCategoryController } from './deleteMenuCategoryController';
-import { getAllMenuCategoriesController } from './getAllMenuCategoriesController';
+import { updateMenuCategoryByIdController } from './updateMenuCategoryByIdController';
+import { deleteMenuCategoryByIdController } from './deleteMenuCategoryByIdController';
+import { getMenuCategoriesByIdUserController } from './getMenuCategoriesByIdUserController';
 
 export const menuCategoryController = {
     createMenuCategoryController,
-    updateMenuCategoryController,
-    deleteMenuCategoryController,
-    getAllMenuCategoriesController,
+    updateMenuCategoryByIdController,
+    deleteMenuCategoryByIdController,
+    getMenuCategoriesByIdUserController,
 };

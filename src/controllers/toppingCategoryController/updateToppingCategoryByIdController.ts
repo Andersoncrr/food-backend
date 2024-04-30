@@ -1,7 +1,7 @@
 import { toppingCategoryService } from '@/services/toppingCategoryService';
 import { NextFunction, Request, Response } from 'express';
 
-export const updateToppingCategoryController = async (
+export const updateToppingCategoryByIdController = async (
     req: Request,
     res: Response,
     next: NextFunction,
@@ -17,7 +17,7 @@ export const updateToppingCategoryController = async (
     const { idToppingCategory } = req.params;
     try {
         const menuCategory =
-            await toppingCategoryService.updateToppingCategoryService(
+            await toppingCategoryService.updateToppingCategoryByIdService(
                 idToppingCategory,
                 {
                     idUser,

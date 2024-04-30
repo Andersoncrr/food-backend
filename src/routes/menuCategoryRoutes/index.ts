@@ -9,9 +9,9 @@ menuCategoryRoutes
 
 menuCategoryRoutes
     .route('/:idUser')
-    .get(menuCategoryController.getAllMenuCategoriesController);
+    .get(menuCategoryController.getMenuCategoriesByIdUserController);
 
 menuCategoryRoutes
     .route('/:idMenuCategory')
-    .put(menuCategoryController.updateMenuCategoryController)
-    .delete(menuCategoryController.deleteMenuCategoryController);
+    .put(menuCategoryController.updateMenuCategoryByIdController)
+    .delete(menuCategoryController.deleteMenuCategoryByIdController);

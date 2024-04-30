@@ -13,9 +13,9 @@ menuProductRoutes
 
 menuProductRoutes
     .route('/:idUser')
-    .get(menuProductsController.getMenuProductsController);
+    .get(menuProductsController.getMenuProductsByIdUserController);
 
 menuProductRoutes
     .route('/:idMenuProduct')
-    .put(menuProductsController.updateMenuProductController)
+    .put(menuProductsController.updateMenuProductByIdController)
     .delete(menuProductsController.deleteMenuProducByIdController);

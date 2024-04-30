@@ -1,7 +1,7 @@
 import { menuCategoryRepository } from '@/repositories/menuCategoryRepository';
 import { isValidObjectId } from 'mongoose';
 
-export const getAllMenuCategoriesService = async (idUser: string) => {
+export const getMenuCategoriesByIdUserService = async (idUser: string) => {
     if (!isValidObjectId(idUser)) {
         throw {
             error: true,
@@ -10,7 +10,7 @@ export const getAllMenuCategoriesService = async (idUser: string) => {
         };
     }
     const menuCategories =
-        await menuCategoryRepository.getAllMenuCategoriesByIdUserRepository(
+        await menuCategoryRepository.getMenuCategoriesByIdUserRepository(
             idUser,
         );
 

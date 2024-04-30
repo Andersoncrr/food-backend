@@ -1,7 +1,7 @@
 import { employeeService } from '@/services/employeeService';
 import { NextFunction, Request, Response } from 'express';
 
-export const updateEmployeeController = async (
+export const updateEmployeeByIdController = async (
     req: Request,
     res: Response,
     next: NextFunction,
@@ -9,7 +9,7 @@ export const updateEmployeeController = async (
     const { name, email, position, phone, idUser } = req.body;
     const { idEmployee } = req.params;
     try {
-        const employee = await employeeService.updateEmployeeService(
+        const employee = await employeeService.updateEmployeeByIdService(
             idEmployee,
             {
                 name,

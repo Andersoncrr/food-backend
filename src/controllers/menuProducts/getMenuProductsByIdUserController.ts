@@ -1,7 +1,7 @@
 import { MenuProductService } from '@/services/menuProductService';
 import { NextFunction, Request, Response } from 'express';
 
-export const getMenuProductsController = async (
+export const getMenuProductsByIdUserController = async (
     req: Request,
     res: Response,
     next: NextFunction,
@@ -9,7 +9,7 @@ export const getMenuProductsController = async (
     try {
         const { idUser } = req.params;
         const allMenuProducts =
-            await MenuProductService.getMenuProductsService(idUser);
+            await MenuProductService.getMenuProductsByIdUserService(idUser);
         res.status(200).json(allMenuProducts);
     } catch (error) {
         next(error);

@@ -6,8 +6,8 @@ export const employeeRoutes: Router = Router();
 employeeRoutes.route('/').post(employeeController.createEmployeeController);
 employeeRoutes
     .route('/:idUser')
-    .get(employeeController.getAllEmployeesControllers);
+    .get(employeeController.getEmployeesByIdUserController);
 employeeRoutes
     .route('/:idEmployee')
-    .delete(employeeController.deleteEmployeeController)
-    .put(employeeController.updateEmployeeController);
+    .delete(employeeController.deleteEmployeeByIdController)
+    .put(employeeController.updateEmployeeByIdController);
