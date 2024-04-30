@@ -16,7 +16,7 @@ app.listen(process.env.SERVER_PORT, () => {
         `[server]: Server is running at http://localhost:${process.env.SERVER_PORT}`,
     );
 });
-
+app.use('/uploads', express.static('uploads'));
 app.use(express.json());
 app.use(cors());
 
