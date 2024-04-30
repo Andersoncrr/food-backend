@@ -1,3 +1,4 @@
+import { upload } from '@/config/multer';
 import { menuProductsController } from '@/controllers/menuProducts';
 import { Router } from 'express';
 
@@ -5,7 +6,10 @@ export const menuProductRoutes: Router = Router();
 
 menuProductRoutes
     .route('/')
-    .post(menuProductsController.createMenuProductController);
+    .post(
+        upload.array('productImages', 10),
+        menuProductsController.createMenuProductController,
+    );
 
 menuProductRoutes
     .route('/:idUser')
@@ -13,4 +17,5 @@ menuProductRoutes
 
 menuProductRoutes
     .route('/:idMenuProduct')
-    .put(menuProductsController.updateMenuProductController);
+    .put(menuProductsController.updateMenuProductController)
+    .delete(menuProductsController.deleteMenuProducByIdController);

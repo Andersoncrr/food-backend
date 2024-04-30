@@ -25,6 +25,13 @@ const menuProduct = new Schema({
         require: true,
         default: STATUS.ACTIVE,
     },
+    productImages: [
+        {
+            url: { type: String, require: true },
+            type: { type: String, require: true },
+            name: { type: String, require: true },
+        },
+    ],
 });
 
 export const MenuProduct = mongoose.model('MenuProduct', menuProduct);
