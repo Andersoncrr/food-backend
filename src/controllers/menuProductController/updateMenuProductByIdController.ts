@@ -6,7 +6,7 @@ export const updateMenuProductByIdController = async (
     res: Response,
     next: NextFunction,
 ) => {
-    const { name, description, category, price, idUser } = req.body;
+    const { name, description, category, price } = req.body;
     const { idMenuProduct } = req.params;
     try {
         const menuProduct =
@@ -16,7 +16,6 @@ export const updateMenuProductByIdController = async (
                     description,
                     category,
                     price,
-                    idUser,
                 },
                 idMenuProduct,
             );

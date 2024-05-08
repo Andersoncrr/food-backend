@@ -1,13 +1,8 @@
-import { menuProductsRepository } from '@/repositories/menuProductRepository';
+import { menuProductRepository } from '@/repositories/menuProductRepository';
 import { isValidObjectId } from 'mongoose';
 
-export const createMenuProductService = async (menuProductData, files) => {
+export const createMenuProductService = async (menuProductData) => {
     const { idUser, category } = menuProductData;
-    const productImages = (files as Express.Multer.File[]).map((file) => ({
-        url: file.path,
-        type: file.mimetype,
-        name: file.filename,
-    }));
 
     if (!isValidObjectId(idUser)) {
         throw {
@@ -25,9 +20,8 @@ export const createMenuProductService = async (menuProductData, files) => {
     }
 
     const menuProduct =
-        await menuProductsRepository.createMenuProductRepository({
-            ...menuProductData,
-            productImages,
-        });
+        await menuProductRepository.createMenuProductRepository(
+            menuProductData,
+        );
     return menuProduct;
 };

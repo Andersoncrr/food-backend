@@ -1,8 +1,8 @@
-import { menuProductsRepository } from '@/repositories/menuProductRepository';
+import { menuProductRepository } from '@/repositories/menuProductRepository';
 import { isValidObjectId } from 'mongoose';
 
 export const updateMenuProductByIdService = async (
-    { name, description, category, price, idUser },
+    { name, description, category, price },
     idMenuProduct,
 ) => {
     if (!isValidObjectId(category)) {
@@ -12,13 +12,7 @@ export const updateMenuProductByIdService = async (
             message: 'El ID  de la categoria no es válido.',
         };
     }
-    if (!isValidObjectId(idUser)) {
-        throw {
-            error: true,
-            status: 400,
-            message: 'El ID  del usuario no es válido.',
-        };
-    }
+
     if (!isValidObjectId(idMenuProduct)) {
         throw {
             error: true,
@@ -28,9 +22,7 @@ export const updateMenuProductByIdService = async (
     }
 
     const menuProduct =
-        await menuProductsRepository.getMenuProductByIdRepository(
-            idMenuProduct,
-        );
+        await menuProductRepository.getMenuProductByIdRepository(idMenuProduct);
 
     if (!menuProduct) {
         throw {
@@ -43,10 +35,9 @@ export const updateMenuProductByIdService = async (
     menuProduct.description = description || menuProduct.description;
     menuProduct.category = category || menuProduct.category;
     menuProduct.price = price || menuProduct.price;
-    menuProduct.idUser = idUser || menuProduct.idUser;
 
     const newMenuProduc =
-        menuProductsRepository.updateMenuProductByIdRepository(menuProduct);
+        menuProductRepository.updateMenuProductByIdRepository(menuProduct);
 
     return newMenuProduc;
 };

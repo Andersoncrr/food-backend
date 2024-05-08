@@ -1,6 +1,6 @@
 import { isValidObjectId } from 'mongoose';
 import { STATUS } from '@/const/status';
-import { menuProductsRepository } from '@/repositories/menuProductRepository';
+import { menuProductRepository } from '@/repositories/menuProductRepository';
 
 export const deleteMenuProductByIdService = async (idMenuProduct) => {
     if (!isValidObjectId(idMenuProduct)) {
@@ -12,9 +12,7 @@ export const deleteMenuProductByIdService = async (idMenuProduct) => {
     }
 
     const menuProduct =
-        await menuProductsRepository.getMenuProductByIdRepository(
-            idMenuProduct,
-        );
+        await menuProductRepository.getMenuProductByIdRepository(idMenuProduct);
 
     if (!menuProduct) {
         throw {
@@ -27,7 +25,7 @@ export const deleteMenuProductByIdService = async (idMenuProduct) => {
     menuProduct.status = STATUS.DELETE;
 
     const newMenuProduct =
-        await menuProductsRepository.updateMenuProductByIdRepository(
+        await menuProductRepository.updateMenuProductByIdRepository(
             menuProduct,
         );
 
