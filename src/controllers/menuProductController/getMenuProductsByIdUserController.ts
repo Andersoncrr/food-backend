@@ -8,6 +8,7 @@ export const getMenuProductsByIdUserController = async (
 ) => {
     try {
         const { idUser } = req.params;
+
         const allMenuProducts =
             await MenuProductService.getMenuProductsByIdUserService(idUser);
         res.status(200).json(allMenuProducts);
