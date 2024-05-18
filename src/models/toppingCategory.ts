@@ -32,6 +32,6 @@ const toppingCategorySchema = new Schema<typeToppingCategory>({
 });
 
 export const ToppingCategory = mongoose.model(
-    'toppingCategory',
+    'ToppingCategory',
     toppingCategorySchema,
 );

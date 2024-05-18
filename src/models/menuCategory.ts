@@ -23,4 +23,4 @@ const menuCategorySchema = new Schema<typeMenuCategory>({
     },
 });
 
-export const MenuCategory = mongoose.model('menuCategory', menuCategorySchema);
+export const MenuCategory = mongoose.model('MenuCategory', menuCategorySchema);
