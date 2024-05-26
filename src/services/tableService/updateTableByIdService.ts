@@ -1,7 +1,13 @@
 import { tableRepository } from '@/repositories/tableRepository';
 import { isValidObjectId } from 'mongoose';
 
-export const updateTableByIdService = async ({ idTable, number, capacity }) => {
+export const updateTableByIdService = async ({
+    idTable,
+    number,
+    capacity,
+    x,
+    y,
+}) => {
     if (!isValidObjectId(idTable)) {
         throw {
             error: true,
@@ -22,6 +28,8 @@ export const updateTableByIdService = async ({ idTable, number, capacity }) => {
 
     table.number = number || table.number;
     table.capacity = capacity || table.capacity;
+    table.y = y || table.y;
+    table.x = x || table.x;
 
     const newTable = await tableRepository.updateTableByIdRepository(table);
     return newTable;

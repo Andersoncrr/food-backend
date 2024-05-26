@@ -18,6 +18,14 @@ const tableSchema = new Schema<typeTable>({
         require: true,
         default: STATUS.ACTIVE,
     },
+    y: {
+        type: Number,
+        default: 0,
+    },
+    x: {
+        type: Number,
+        default: 0,
+    },
 });
 
 export const Table = mongoose.model('Table', tableSchema);

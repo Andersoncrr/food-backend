@@ -5,4 +5,6 @@ export interface typeTable {
     capacity: number;
     idUser: Schema.Types.ObjectId;
     status?: string;
+    x?: number;
+    y?: number;
 }
