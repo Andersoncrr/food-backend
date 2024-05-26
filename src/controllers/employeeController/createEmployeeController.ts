@@ -7,7 +7,8 @@ export const createEmployeeController = async (
     next: NextFunction,
 ) => {
     try {
-        const { name, position, email, phone, idUser } = req.body;
+        const { name, position, email, phone, idUser, password, permissions } =
+            req.body;
 
         const employee = await employeeService.createEmployeeService({
             name,
@@ -15,6 +16,8 @@ export const createEmployeeController = async (
             position,
             phone,
             idUser,
+            password,
+            permissions,
         });
         res.status(200).json(employee);
     } catch (error) {

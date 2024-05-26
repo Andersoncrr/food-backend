@@ -21,6 +21,10 @@ const userSchema = new Schema<typeUser>({
         type: [{ type: String, enum: ['admin'] }],
         default: ['admin'],
     },
+    typeLogin: {
+        type: String,
+        default: 'user',
+    },
 });
 
 export const User = mongoose.model('User', userSchema);

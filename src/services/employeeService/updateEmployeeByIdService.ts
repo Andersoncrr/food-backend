@@ -1,12 +1,13 @@
 import { employeeRepository } from '@/repositories/employeeRepository';
 import { typeEmployee } from '@/types/employee';
 import { isValidObjectId } from 'mongoose';
+import bcrypt from 'bcrypt';
 
 export const updateEmployeeByIdService = async (
     idEmployee: string,
     employeeData: typeEmployee,
 ) => {
-    const { name, email, position, phone, idUser } = employeeData;
+    const { name, email, position, phone, idUser, password } = employeeData;
 
     if (!isValidObjectId(idEmployee)) {
         throw {
@@ -33,9 +34,17 @@ export const updateEmployeeByIdService = async (
     employee.position = position || employee.position;
     employee.phone = phone || employee.phone;
     employee.idUser = idUser || employee.idUser;
+    if (password) {
+        const salt = await bcrypt.genSalt(10);
+        const encryptedPassword = await bcrypt.hash(password, salt);
+        employee.password = encryptedPassword;
+    }
 
-    const newEmployee =
+    const saveEmployee =
         await employeeRepository.updateEmployeeByIdRepository(employee);
+
+    const { password: employeePassword, ...newEmployee } =
+        saveEmployee.toJSON();
 
     return newEmployee;
 };

@@ -6,4 +6,5 @@ export interface typeUser {
     email: string;
     password: string;
     permissions?: Array<'admin'>;
+    typeLogin?: string;
 }

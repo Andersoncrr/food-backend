@@ -6,7 +6,8 @@ export const updateEmployeeByIdController = async (
     res: Response,
     next: NextFunction,
 ) => {
-    const { name, email, position, phone, idUser } = req.body;
+    const { name, email, position, phone, idUser, password, permissions } =
+        req.body;
     const { idEmployee } = req.params;
     try {
         const employee = await employeeService.updateEmployeeByIdService(
@@ -17,6 +18,8 @@ export const updateEmployeeByIdController = async (
                 position,
                 phone,
                 idUser,
+                password,
+                permissions,
             },
         );
         res.status(200).json(employee);
