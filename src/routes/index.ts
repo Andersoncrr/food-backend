@@ -5,6 +5,7 @@ import { menuCategoryRoutes } from './menuCategoryRoutes';
 import { toppingCategoryRoutes } from './toppingCategoryRoutes';
 import { menuProductRoutes } from './menuProductRoutes';
 import { tableRoutes } from './tableRoutes';
+import { businessHourRoutes } from './businessHourRoutes';
 
 export const router: Router = Router();
 
@@ -14,3 +15,4 @@ router.use('/menu-category', menuCategoryRoutes);
 router.use('/topping-category', toppingCategoryRoutes);
 router.use('/menu-product', menuProductRoutes);
 router.use('/table', tableRoutes);
+router.use('/business-hour', businessHourRoutes);
