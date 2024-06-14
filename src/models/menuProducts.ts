@@ -1,7 +1,7 @@
 import { STATUS } from '@/const/status';
 import mongoose, { Schema } from 'mongoose';
 
-const menuProduct = new Schema({
+const menuProduct = new Schema<any>({
     idUser: {
         type: Schema.Types.ObjectId,
         ref: 'User',
@@ -30,6 +30,7 @@ const menuProduct = new Schema({
             url: { type: String, require: true },
             type: { type: String, require: true },
             name: { type: String, require: true },
+            size: { type: Number, require: true },
         },
     ],
 });

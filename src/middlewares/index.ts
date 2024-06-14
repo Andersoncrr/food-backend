@@ -1,3 +1,4 @@
-import { errorHandlerMiddleware } from "./errorHandlerMiddleware";
+import { errorHandlerMiddleware } from './errorHandlerMiddleware';
+import { uploadMiddleware } from './uploadMiddelware';
 
-export { errorHandlerMiddleware };
+export { errorHandlerMiddleware, uploadMiddleware };

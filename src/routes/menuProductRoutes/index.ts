@@ -1,4 +1,5 @@
 import { menuProductController } from '@/controllers/menuProductController';
+import { uploadMiddleware } from '@/middlewares';
 import { Router } from 'express';
 
 export const menuProductRoutes: Router = Router();
@@ -6,6 +7,13 @@ export const menuProductRoutes: Router = Router();
 menuProductRoutes
     .route('/')
     .post(menuProductController.createMenuProductController);
+
+menuProductRoutes
+    .route('/image/:idMenuProduct')
+    .post(
+        uploadMiddleware(1, 'products'),
+        menuProductController.saveImagesMenuProductByIdController,
+    );
 
 menuProductRoutes
     .route('/all/:idUser')

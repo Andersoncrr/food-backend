@@ -3,6 +3,7 @@ import { createMenuProductService } from './createMenuProductService';
 import { updateMenuProductByIdService } from './updateMenuProductByIdService';
 import { deleteMenuProductByIdService } from './deleteMenuProductByIdService';
 import { getMenuProductByIdService } from './getMenuProductByIdService';
+import { saveImagesMenuProductByIdService } from './saveImagesMenuProductByIdService';
 
 export const MenuProductService = {
     getMenuProductsByIdUserService,
@@ -10,4 +11,5 @@ export const MenuProductService = {
     updateMenuProductByIdService,
     deleteMenuProductByIdService,
     getMenuProductByIdService,
+    saveImagesMenuProductByIdService,
 };
