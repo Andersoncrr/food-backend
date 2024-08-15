@@ -18,7 +18,7 @@ const menuProduct = new Schema<any>({
         ref: 'menuCategory',
     },
     price: {
-        type: String,
+        type: Number,
     },
     status: {
         type: String,
